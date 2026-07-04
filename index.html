@@ -3,116 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OrlanDroyd — Moved</title>
+  <title>Orlando Peña Fernández — orlandroyd.com</title>
 
-  <!-- SEO: tell Google this page moved permanently -->
+  <!-- Instant redirect (0s) — strongest signal Google accepts short of a 301 -->
+  <meta http-equiv="refresh" content="0;url=https://orlandroyd.com/" />
+
+  <!-- Canonical: consolidates ranking signals to the new domain -->
   <link rel="canonical" href="https://orlandroyd.com/" />
 
-  <!-- Auto-redirect after 3 seconds -->
-  <meta http-equiv="refresh" content="3;url=https://orlandroyd.com/" />
+  <!-- Tell crawlers this URL is gone / moved so they drop it from the index -->
+  <meta name="robots" content="noindex, follow" />
+
+  <meta name="description" content="This site has permanently moved to orlandroyd.com." />
+
+  <script>
+    // Client-side hard redirect as a second layer; runs before the meta refresh in most browsers.
+    window.location.replace("https://orlandroyd.com/");
+  </script>
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: #0d0d0d;
-      color: #e0e0e0;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .container {
-      max-width: 480px;
-    }
-
-    .badge {
-      display: inline-block;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #aaa;
-      background: #1a1a1a;
-      border: 1px solid #2a2a2a;
-      border-radius: 100px;
-      padding: 4px 14px;
-      margin-bottom: 2rem;
-    }
-
-    h1 {
-      font-size: clamp(1.5rem, 5vw, 2.2rem);
-      font-weight: 600;
-      color: #fff;
-      line-height: 1.3;
-      margin-bottom: 1rem;
-    }
-
-    h1 span {
-      color: #aaff6e;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #888;
-      line-height: 1.7;
-      margin-bottom: 2rem;
-    }
-
-    .cta {
-      display: inline-block;
-      background: #aaff6e;
-      color: #0d0d0d;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      border-radius: 8px;
-      padding: 0.75rem 2rem;
-      transition: opacity 0.2s;
-    }
-
-    .cta:hover { opacity: 0.85; }
-
-    .countdown {
-      margin-top: 1.5rem;
-      font-size: 0.8rem;
-      color: #555;
-    }
-
-    .countdown span {
-      color: #aaff6e;
-      font-weight: 600;
-    }
+    body { background:#0d0d0d; color:#e0e0e0; font-family:system-ui,sans-serif;
+           min-height:100vh; display:flex; align-items:center; justify-content:center;
+           text-align:center; padding:2rem; margin:0; }
+    a { color:#aaff6e; font-weight:600; text-decoration:none; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="badge">Portfolio moved</div>
-
-    <h1>I've got a new home at<br><span>orlandroyd.com</span></h1>
-
-    <p>This page is no longer the primary portfolio.<br>
-    You'll be redirected automatically in a few seconds.</p>
-
-    <a class="cta" href="https://orlandroyd.com/">Take me there →</a>
-
-    <p class="countdown">Redirecting in <span id="s">3</span>s…</p>
+  <div>
+    <h1>This site has moved</h1>
+    <p>Redirecting to <a href="https://orlandroyd.com/">orlandroyd.com</a>…</p>
   </div>
-
-  <script>
-    let t = 3;
-    const el = document.getElementById('s');
-    const iv = setInterval(() => {
-      t--;
-      el.textContent = t;
-      if (t <= 0) {
-        clearInterval(iv);
-        window.location.replace('https://orlandroyd.com/');
-      }
-    }, 1000);
-  </script>
 </body>
 </html>
